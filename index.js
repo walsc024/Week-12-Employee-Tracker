@@ -106,6 +106,18 @@ function viewAllDepartments() {
     })
     return roleArr;
   }
+// Select Role Quieries The Managers for Add Employee Prompt //
+var managersArr = [];
+function selectManager() {
+  connection.query("SELECT first_name, last_name FROM employee WHERE manager_id IS NULL", function(err, res) {
+    if (err) throw err
+    for (var i = 0; i < res.length; i++) {
+      managersArr.push(res[i].first_name);
+    }
+
+  })
+  return managersArr;
+}
 
   
 
