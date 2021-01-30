@@ -34,9 +34,6 @@ CREATE TABLE employee (
     FOREIGN KEY (manager_id) REFERENCES employment(id)
 );
 
--- DEPARTMENT SEEDS --
-INSERT INTO department (name)
-VALUE ("Sales");
-INSERT INTO
+
 
 
