@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/walsc024/Week-12-Employee-Tracker#readme",
   "dependencies": {
-    "inquirer": "^7.3.3"
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
   }
 }
