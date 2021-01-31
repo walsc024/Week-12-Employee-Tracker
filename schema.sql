@@ -1,37 +1,27 @@
-DROP DATABASE IF EXISTS employee_trackerDB;
-CREATE database employee_trackerDB;
+DROP DATABASE IF EXISTS employeeDB;
 
-USE employee_trackerDB;
+CREATE DATABASE employeeDB;
 
-CREATE TABLE employee (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  first_name VARCHAR(32) NOT NULL, 
-  last_name VARCHAR(32) NOT NULL, 
-  role_id INT
-);
+USE employeeDB;
 
 CREATE TABLE department (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(32) UNIQUE NOT NULL,
+    id INT auto_increment PRIMARY KEY NOT NULL,
+    name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE role (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(30),
-  salary DECIMAL,
-  department_id INT,
-  FOREIGN KEY (department_id) REFERENCES department(id)
+    id INT auto_increment PRIMARY KEY NOT NULL,
+    title VARCHAR(30) NOT NULL,
+    salary DECIMAL(9,2) NOT NULL,
+    department_id INT NOT NULL
 );
--- EMPLOYEE ROLE TABLE -- 
 
 CREATE TABLE employee (
-    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id INT auto_increment PRIMARY KEY NOT NULL,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
-    manager_id INT,
     role_id INT,
-    FOREIGN KEY (role_id) REFERENCES role (id),
-    FOREIGN KEY (manager_id) REFERENCES employment(id)
+    manager_id INT NULL
 );
 
 

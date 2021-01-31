@@ -1,45 +1,10 @@
-USE employee_trackerDB;
-
--- DEPARTMENT SEEDS -- 
+USE employeeDB;
 
 INSERT INTO department (name)
-VALUE ('Finance'),('Engineering'),('Sales'),('Legal'),;
-
--- EMPLOYEE ROLE SEEDS --
+VALUES ('Sales'), ('Engineering'), ('Finance'), ('Legal');
 
 INSERT INTO role (title, salary, department_id)
-VALUE ("Lead ENgineer", 150000, 2);
-INSERT INTO role (title, salary, department_id)
-VALUE ("Legal Team Lead", 250000, 4);
-INSERT INTO role (title, salary, department_id)
-VALUE ("Accountant", 125000, 3);
-INSERT INTO role (title, salary, department_id)
-VALUE ("Sales Lead", 100000, 1);
-INSERT INTO role (title, salary, department_id)
-VALUE ("Salesperson", 80000, 1);
-INSERT INTO role (title, salary, department_id)
-VALUE ("Software Engineer", 120000, 2);
-INSERT INTO role (title, salary, department_id)
-VALUE ("Lawyer", 190000, 4);
+VALUES ('Sales Lead', 100000, 1), ('Salesperson', 80000, 1), ('Lead Engineer', 150000, 2), ('Software Engineer', 120000, 2), ('Accountant', 125000, 3), ('Legal Team Lead', 250000, 4), ('Lawyer', 190000, 4);
 
--- EMPLOYEE SEEDS -------
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Janet", "Large", null, 1);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Hayley", "Morris", null, 2);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Ella","Higgins",null,3);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Bob", "Lao", 1, 4);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Chris", "Walsh", 4, 5);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Steven", "Gerrard", 1, 6);
-INSERT INTO employee (first_name, last_name, manager_id, role_id)
-VALUE ("Tom", "Holland", 2, 7);
-
--- SELECTING FOR CREATING 
---TABLES IN OUR SQL WORKBENCH 
-SELECT * FROM department;
-SELECT * FROM role;
-SELECT * FROM employee;
+INSERT INTO employee (first_name, last_name, role_id, manager_id) 
+VALUES ('Lauren', 'Meekison', 1, null), ('Paul', 'Bernard-Hall', 3, null), ('Chris', 'Nguyen', 4, 2), ('Chris', 'Pong', 6, null), ('Johnny', 'Bodenbach', 2, 1), ('Leonard', 'Walter', 2, 1);
